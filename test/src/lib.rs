@@ -4,7 +4,6 @@ mod router;
 use crate::components::molecules::custom_form::Data;
 use crate::router::{switch, Route};
 use components::atoms::main_title::{Color, MainTitle};
-use components::atoms::struct_hello::StructHello;
 use components::molecules::custom_form::CustomForm;
 use gloo::console::log;
 use std::ops::Deref;
@@ -35,8 +34,12 @@ pub fn app() -> Html {
     };
 
     html! {
-        <div>
-            <StructHello />
-        </div>
+        <ContextProvider<User> context={user_state.deref().clone()}>
+            <MainTitle title="Hi there!!!!!!!" color={Color::Ok} on_load={main_title_load} />
+            <CustomForm onsubmit={custom_form_submit} />
+            <BrowserRouter>
+                <Switch<Route> render={Switch::render(switch)} />
+            </BrowserRouter>
+        </ContextProvider<User>>
     }
 }
