@@ -1,4 +1,5 @@
 # rust
+SETTING UP THE FRONTEND PART
 install rust in the workspace
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -20,3 +21,5 @@ cargo generate yewstack/yew-trunk-minimal-template
 
 run the project in the root project
 trunk serve
+
+
