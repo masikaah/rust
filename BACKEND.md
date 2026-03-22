@@ -8,3 +8,6 @@ cargo add actix-web
 
 run the project
 cargo run
+
+how to test the server
+curl http://127.0.0.1:8081/
