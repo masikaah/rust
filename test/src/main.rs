@@ -21,4 +21,3 @@ fn main() {
     tracing::info!("Starting Yew application");
     yew::Renderer::<App>::new().render();
 }
-
